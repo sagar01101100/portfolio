@@ -12,7 +12,7 @@ const Player = dynamic(
 type ApplicationProps = {
   title: string;
   description: string;
-  animation?: string;
+  animation?: object;
   link?: string;
 };
 
