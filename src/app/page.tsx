@@ -1,55 +1,86 @@
-// app/page.tsx
-
 "use client";
 
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { motion } from "framer-motion";
+import { FaGithub, FaLinkedin, FaFacebook, FaInstagram, FaWhatsapp } from "react-icons/fa";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white flex flex-col items-center justify-center px-6 py-16">
-      <div className="max-w-4xl text-center">
-        <img
-          src="/profile.jpg" // Add this image in public folder
-          alt="Sagar Das"
-          className="w-40 h-40 mx-auto rounded-full border-4 border-white shadow-lg mb-6"
-        />
+    <main className="h-screen w-full bg-gradient-to-br from-[#0f2027] via-[#203a43] to-[#2c5364] text-white overflow-hidden relative">
+      {/* Full Page Background Circuit Pattern */}
+      <div className="absolute inset-0 z-0">
+        <svg className="w-full h-full opacity-10" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern id="circuitPattern" width="60" height="60" patternUnits="userSpaceOnUse">
+              <path d="M0 30 L60 30 M30 0 L30 60" stroke="#00f0ff" strokeWidth="0.5" />
+              <circle cx="30" cy="30" r="2" fill="#00f0ff" />
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#circuitPattern)" />
+        </svg>
+      </div>
 
-        <h1 className="text-5xl sm:text-6xl font-bold mb-4 tracking-tight">
-          ♞ Sagar ♞
+      {/* Header */}
+      <motion.header
+        className="text-center pt-12 z-10 relative"
+        initial={{ opacity: 0, y: -30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+      >
+        <h1 className="text-6xl font-extrabold bg-gradient-to-r from-blue-400 to-teal-300 bg-clip-text text-transparent">
+          Sagar
         </h1>
-
-        <h2 className="text-2xl sm:text-3xl font-light text-gray-300 mb-6">
-          Full Stack Developer | JavaScript Enthusiast | AWS Learner
-        </h2>
-
-        <p className="text-lg text-gray-400 leading-relaxed max-w-2xl mx-auto mb-8">
-          I build performant and scalable web & mobile applications using Next.js,
-          React Native, Node.js, and AWS. Passionate about turning complex
-          problems into elegant solutions.
+        <p className="text-xl mt-4 text-gray-300">
+          Software Developer
         </p>
+      </motion.header>
 
-        <div className="flex items-center justify-center space-x-6 mb-10">
-          <a
-            href="https://github.com/sagar01101100"
-            target="_blank"
-            className="hover:text-gray-300 transition"
-          >
-            <FaGithub size={30} />
-          </a>
-          <a
-            href="https://linkedin.com/in/YOUR-LINKEDIN"
-            target="_blank"
-            className="hover:text-blue-400 transition"
-          >
-            <FaLinkedin size={30} />
-          </a>
-        </div>
-
-        <a
-          href="mailto:sagardas@example.com"
-          className="bg-white text-gray-900 px-6 py-3 rounded-full font-medium hover:bg-gray-200 transition"
+      {/* Featured Apps */}
+      <section className="z-10 relative max-w-6xl mx-auto px-6 pb-4 pt-6">
+        <motion.h2
+          className="text-3xl font-bold text-center mb-6"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.5, duration: 1 }}
         >
-          Contact Me
+          Featured Apps
+        </motion.h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          {[1, 2, 3].map((item) => (
+            <motion.div
+              key={item}
+              className="bg-white/5 p-4 rounded-xl border border-white/10 shadow-xl backdrop-blur-md hover:scale-[1.03] transition duration-300"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: item * 0.2 }}
+              viewport={{ once: true }}
+            >
+              <h3 className="text-xl font-semibold mb-2 text-white">
+                Project #{item}
+              </h3>
+              <p className="text-gray-400 text-sm">
+                An intelligent application that leverages cutting-edge tech to solve real-world problems.
+              </p>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      {/* Social Icons in Right Bottom Corner (Horizontal) */}
+      <div className="absolute right-4 bottom-4 z-10 flex gap-4 text-xl">
+        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+          <FaFacebook className="hover:text-blue-500" />
+        </a>
+        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+          <FaInstagram className="hover:text-pink-400" />
+        </a>
+        <a href="https://wa.me/your_number" target="_blank" rel="noopener noreferrer">
+          <FaWhatsapp className="hover:text-green-400" />
+        </a>
+        <a href="https://github.com/sagar01101100" target="_blank" rel="noopener noreferrer">
+          <FaGithub className="hover:text-gray-300" />
+        </a>
+        <a href="https://linkedin.com/in/sagar01101100" target="_blank" rel="noopener noreferrer">
+          <FaLinkedin className="hover:text-blue-600" />
         </a>
       </div>
     </main>
