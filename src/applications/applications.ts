@@ -1,7 +1,7 @@
 // data/projects.ts
 
 import musicPlayerAnim from "@/animations/Music_Iocn_Animation.json";
-const musicPlayerLink = "/";
+const musicPlayerLink = "https://12ca2cac12c2.ngrok-free.app/";
 // import devPortfolioAnim from "@/animations/portfolio.json";
 // import chatAppAnim from "@/animations/chat.json";
 // import expenseAnim from "@/animations/finance.json";
