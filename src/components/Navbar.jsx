@@ -1,6 +1,6 @@
 "use client";
 import { useRouter } from "next/navigation";
-import AnimatedCat from "@/components/AnimatedCat";
+import AnimatedHome from "@/components/AnimatedHome";
 
 export default function Navbar() {
   const router = useRouter();
@@ -8,12 +8,13 @@ export default function Navbar() {
   return (
     <nav className="absolute top-4 left-4 z-10">
       <button
-        onClick={() => router.push("/")}
-        className="w-16 h-16 rounded-full bg-white/10 border border-white/20 flex items-center justify-center hover:bg-teal-500 transition duration-300"
-        aria-label="Go to home"
-      >
-        <AnimatedCat />
-      </button>
+  onClick={() => router.push("/")}
+  className="w-14 h-14 rounded-full border border-white/1 flex items-center justify-center transition duration-300 hover:bg-blue-500/10"
+  aria-label="Go to home"
+>
+  <AnimatedHome />
+</button>
+
     </nav>
   );
 }
