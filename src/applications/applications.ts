@@ -1,14 +1,15 @@
 // data/projects.ts
 
 import musicPlayerAnim from "@/animations/Music_Iocn_Animation.json";
-const musicPlayerLink = "https://12ca2cac12c2.ngrok-free.app/";
+const musicPlayerLink = "https://ytmeowsic.vercel.app/";
+
 // import devPortfolioAnim from "@/animations/portfolio.json";
 // import chatAppAnim from "@/animations/chat.json";
 // import expenseAnim from "@/animations/finance.json";
 
 const applications = [
   {
-    title: "Music Player",
+    title: "Meowsic",
     description:
       "A clean and ad-free music player that lets users stream YouTube audio by simply pasting the video link.",
     animation: musicPlayerAnim,
