@@ -1,4 +1,3 @@
-// /app/not-found.tsx
 "use client";
 
 import dynamic from "next/dynamic";
@@ -22,7 +21,7 @@ export default function NotFound() {
       />
       <h1 className="text-4xl font-bold mt-6">404 - Page Not Found</h1>
       <p className="text-gray-400 mt-2 mb-6">
-        Sorry, the page you're looking for doesn't exist.
+        Sorry, the page you&apos;re looking for doesn&apos;t exist.
       </p>
       <Link
         href="/"
